@@ -1,6 +1,9 @@
+//create an array to store the books
 const myLibrary = [];
 
+//define a book class to create the varius books
 class Book {
+    //create a constructor method that lets you define the title, author, pages and read properties
     constructor(title, author, pages, read){
         this.title = title;
         this.author = author;
@@ -8,7 +11,7 @@ class Book {
         this.read = read;
     };
 
-    
+    //method that creates a card with the books properties in the HTML 
     createCard(book){
             const cards = document.querySelector(".cards")
 
@@ -49,11 +52,13 @@ class Book {
             })
     };
 
+    //pushes the book in the library
     addBookToLibrary(book) {
         myLibrary.push(book);
     };
 }
 
+//define a screen controller function that lets you define how the buttons opens the dialog and how to create a book
 function screenController(){
     const openFormBtn = document.querySelector("[data-open-modal]")
     const closeFormBtn = document.querySelector("[data-close-modal]")
@@ -101,4 +106,5 @@ function screenController(){
     })
 }
 
+//call the screenController function
 screenController()
